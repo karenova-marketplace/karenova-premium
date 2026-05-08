@@ -1,0 +1,259 @@
+// SITE COMPLETO KARENOVA PREMIUM
+// Estrutura pronta para Next.js + Tailwind + Ecommerce Premium
+
+export default function KarenovaMarketplace() {
+  const products = [
+    {
+      name: 'SmartWatch Ultra',
+      price: 'R$ 299,90',
+      old: 'R$ 599,90',
+      image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1200&auto=format&fit=crop',
+    },
+    {
+      name: 'Fone Premium X',
+      price: 'R$ 149,90',
+      old: 'R$ 349,90',
+      image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1200&auto=format&fit=crop',
+    },
+    {
+      name: 'Luminária RGB',
+      price: 'R$ 89,90',
+      old: 'R$ 199,90',
+      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop',
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-black text-white font-sans">
+      <header className="border-b border-yellow-700/20 backdrop-blur-xl sticky top-0 z-50 bg-black/80">
+        <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+          <div>
+            <h1 className="text-3xl font-black tracking-widest text-pink-300">KARENOVA</h1>
+            <p className="text-xs text-zinc-400">Marketplace Premium inspirado em estética ultra sofisticada e moderna, com aparência internacional e experiência premium de ecommerce</p>
+          </div>
+
+          <nav className="hidden md:flex items-center gap-8 text-sm text-zinc-300">
+            <a href="#" className="hover:text-pink-300 transition">Início</a>
+            <a href="#" className="hover:text-pink-300 transition">Produtos</a>
+            <a href="#" className="hover:text-pink-300 transition">Mais Vendidos</a>
+            <a href="#" className="hover:text-pink-300 transition">Contato</a>
+          </nav>
+
+          <div className="flex items-center gap-4">
+            <button className="border border-pink-300 px-4 py-2 rounded-xl text-sm hover:bg-yellow-600 hover:text-black transition">
+              Login
+            </button>
+            <button className="bg-pink-300 text-black px-5 py-2 rounded-xl font-bold hover:scale-105 transition">
+              Carrinho
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-pink-400/20 to-transparent blur-3xl"></div>
+
+        <div className="max-w-7xl mx-auto px-6 py-28 grid md:grid-cols-2 gap-16 items-center relative z-10">
+          <div>
+            <div className="inline-flex items-center gap-2 bg-pink-300/10 border border-pink-300/20 px-4 py-2 rounded-full mb-6">
+              <span className="w-2 h-2 bg-pink-300 rounded-full animate-pulse"></span>
+              <span className="text-yellow-400 text-sm">Marketplace Premium em Alta</span>
+            </div>
+
+            <h2 className="text-6xl font-black leading-tight mb-6">
+              Beleza, Lifestyle e Tendências <span className="text-pink-300">Premium</span>
+            </h2>
+
+            <p className="text-zinc-400 text-lg leading-relaxed mb-8">
+              Uma experiência sofisticada de ecommerce com aparência internacional, criada para gerar desejo, confiança e alta conversão.
+            </p>
+
+            <div className="flex flex-wrap gap-4">
+              <button className="bg-pink-300 hover:bg-pink-200 text-black font-bold px-8 py-4 rounded-2xl text-lg transition hover:scale-105 shadow-2xl shadow-pink-300/20">
+                Comprar Agora
+              </button>
+
+              <button className="border border-zinc-700 hover:border-pink-300 px-8 py-4 rounded-2xl text-lg transition">
+                Ver Ofertas
+              </button>
+            </div>
+
+            <div className="grid grid-cols-3 gap-6 mt-12">
+              <div>
+                <h3 className="text-3xl font-black text-pink-300">+50K</h3>
+                <p className="text-zinc-400 text-sm">Clientes</p>
+              </div>
+
+              <div>
+                <h3 className="text-3xl font-black text-pink-300">24H</h3>
+                <p className="text-zinc-400 text-sm">Suporte</p>
+              </div>
+
+              <div>
+                <h3 className="text-3xl font-black text-pink-300">100%</h3>
+                <p className="text-zinc-400 text-sm">Seguro</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="absolute inset-0 bg-pink-300/20 blur-3xl rounded-full"></div>
+
+            <img
+              src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=1200&auto=format&fit=crop"
+              className="rounded-3xl border border-pink-300/20 shadow-2xl relative z-10"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="max-w-7xl mx-auto px-6 py-24">
+        <div className="flex items-center justify-between mb-12">
+          <div>
+            <h2 className="text-4xl font-black mb-3">Coleções Exclusivas</h2>
+            <p className="text-zinc-400">Os produtos mais vendidos da Karenova</p>
+          </div>
+
+          <button className="border border-pink-300 text-pink-300 px-5 py-3 rounded-xl hover:bg-pink-300 hover:text-black transition">
+            Ver Todos
+          </button>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {products.map((product, index) => (
+            <div
+              key={index}
+              className="group bg-zinc-950 border border-zinc-800 rounded-3xl overflow-hidden hover:border-pink-300/40 transition-all duration-300 hover:-translate-y-2"
+            >
+              <div className="overflow-hidden">
+                <img
+                  src={product.image}
+                  className="h-80 w-full object-cover group-hover:scale-110 transition duration-700"
+                />
+              </div>
+
+              <div className="p-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="bg-pink-300 text-black text-xs font-bold px-3 py-1 rounded-full">
+                    Viral
+                  </span>
+
+                  <span className="bg-green-500/10 text-green-400 text-xs px-3 py-1 rounded-full">
+                    Em estoque
+                  </span>
+                </div>
+
+                <h3 className="text-2xl font-bold mb-3">{product.name}</h3>
+
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="text-3xl font-black text-pink-300">{product.price}</span>
+                  <span className="text-zinc-500 line-through">{product.old}</span>
+                </div>
+
+                <button className="w-full bg-pink-300 hover:bg-pink-200 text-black font-bold py-4 rounded-2xl transition hover:scale-[1.02]">
+                  Comprar Agora
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="py-24 border-y border-zinc-800 bg-zinc-950">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10 text-center">
+          <div>
+            <div className="text-5xl mb-4">🚚</div>
+            <h3 className="font-bold text-xl mb-2">Entrega Rápida</h3>
+            <p className="text-zinc-400">Rastreamento automático em tempo real</p>
+          </div>
+
+          <div>
+            <div className="text-5xl mb-4">🔒</div>
+            <h3 className="font-bold text-xl mb-2">Pagamento Seguro</h3>
+            <p className="text-zinc-400">Pix, Cartão e Carteiras Digitais</p>
+          </div>
+
+          <div>
+            <div className="text-5xl mb-4">⭐</div>
+            <h3 className="font-bold text-xl mb-2">Avaliações Reais</h3>
+            <p className="text-zinc-400">Clientes satisfeitos em todo Brasil</p>
+          </div>
+
+          <div>
+            <div className="text-5xl mb-4">💰</div>
+            <h3 className="font-bold text-xl mb-2">Cashback</h3>
+            <p className="text-zinc-400">Ganhe saldo a cada compra realizada</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="max-w-5xl mx-auto px-6 py-28 text-center">
+        <div className="bg-gradient-to-r from-yellow-500/10 to-yellow-700/10 border border-pink-300/20 rounded-[40px] p-14">
+          <h2 className="text-5xl font-black mb-6">
+            Entre para a Nova Era do Ecommerce
+          </h2>
+
+          <p className="text-zinc-400 text-lg mb-10 max-w-2xl mx-auto">
+            Receba ofertas exclusivas, cupons premium e acesso antecipado aos produtos mais virais da Karenova.
+          </p>
+
+          <div className="flex flex-col md:flex-row gap-4 max-w-2xl mx-auto">
+            <input
+              placeholder="Seu melhor e-mail"
+              className="flex-1 bg-black border border-zinc-700 rounded-2xl px-6 py-4 outline-none focus:border-pink-300"
+            />
+
+            <button className="bg-pink-300 text-black font-black px-8 py-4 rounded-2xl hover:bg-pink-200 transition">
+              Entrar Agora
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <footer className="border-t border-zinc-800 py-14">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
+          <div>
+            <h3 className="text-3xl font-black text-pink-300 mb-4">KARENOVA</h3>
+            <p className="text-zinc-400 leading-relaxed">
+              Marketplace premium criado para escalar vendas e entregar experiências sofisticadas.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="font-bold mb-4">Institucional</h4>
+            <div className="space-y-3 text-zinc-400">
+              <p>Sobre</p>
+              <p>Contato</p>
+              <p>FAQ</p>
+              <p>Políticas</p>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="font-bold mb-4">Suporte</h4>
+            <div className="space-y-3 text-zinc-400">
+              <p>WhatsApp</p>
+              <p>E-mail</p>
+              <p>Pedidos</p>
+              <p>Rastreamento</p>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="font-bold mb-4">Pagamento</h4>
+            <div className="space-y-3 text-zinc-400">
+              <p>Pix</p>
+              <p>Cartão</p>
+              <p>Boleto</p>
+              <p>Carteiras Digitais</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="border-t border-zinc-800 mt-14 pt-8 text-center text-zinc-500 text-sm">
+          © 2026 Karenova — Todos os direitos reservados. HTTPS + SSL Ready.
+        </div>
+      </footer>
+    </div>
+  );
+}
